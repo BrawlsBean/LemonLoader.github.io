@@ -1,4 +1,4 @@
-# 🍋 LemonLoader — Advanced Modding Framework for Unity Android & VR Games
+# 🍋 LemonLoader — Advanced Modding Framework for Android [Unity & VR Games]
 
 ![LemonLoader Banner]([https://example.com/lemonloader-banner.png](http://lemonloader.com/wp-content/uploads/2025/05/cropped-Lemon-Loader-Favicon.png))
 
