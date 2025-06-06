@@ -1,149 +1,173 @@
-# 🍋 LemonLoader Installer – The Ultimate Minecraft Mod Loader Guide (2025)
+# 🍋 LemonLoader — Advanced Modding Framework for Unity Android & VR Games
 
-**LemonLoader** is a next-generation Minecraft mod loader designed with performance, simplicity, and cross-platform compatibility in mind. Unlike older mod loaders that often feel bloated or overly technical, LemonLoader takes a minimalist approach—making it ideal for both new modders and seasoned developers.
-
-Whether you're looking to install client-side mods, improve Minecraft performance, or create your own modding environment, LemonLoader is a smart, efficient choice.
-
-🌐 Official site: [https://lemonloader.com](https://lemonloader.com)
+![LemonLoader Banner]([https://example.com/lemonloader-banner.png](http://lemonloader.com/wp-content/uploads/2025/05/cropped-Lemon-Loader-Favicon.png))
 
 ---
 
-## ✅ Why Choose LemonLoader?
-
-With so many mod loaders in the Minecraft ecosystem—like Forge, Fabric, and Quilt—you might be wondering: **Why LemonLoader?**
-
-- ⚡ **Lightweight & Fast** – Optimized for performance, even on low-spec systems.
-- 🖥️ **Cross-Platform** – Windows, macOS, and Linux support.
-- 🧩 **Open Source** – Transparent development, community-driven.
-- 🎮 **Easy to Use** – No mod dependency hell.
-- 🛠️ **Future-Ready** – Modular support for newer Minecraft versions.
-
----
-
-## 💥 System Requirements
-
-| Requirement       | Minimum                            |
-|-------------------|-------------------------------------|
-| Java              | Java 17 or higher                   |
-| Minecraft Version | 1.16+                               |
-| OS                | Windows 10/11, macOS, Linux         |
-| RAM               | 4 GB (8 GB recommended)             |
-| Disk Space        | ~50 MB for base install             |
+## Table of Contents
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [How LemonLoader Works](#how-lemonloader-works)
+- [Supported Platforms](#supported-platforms)
+- [Installation Instructions](#installation-instructions)
+- [Mod Compatibility](#mod-compatibility)
+- [Known Limitations](#known-limitations)
+- [Why Use LemonLoader?](#why-use-lemonloader)
+- [Community & Contributions](#community--contributions)
+- [Frequently Asked Questions (FAQ)](#frequently-asked-questions-faq)
+- [License](#license)
 
 ---
 
-## 📅 Download LemonLoader
+## Overview
 
-Always use official sources to download:
+**LemonLoader** is a cutting-edge **open-source mod loader** designed to unlock deep customization for **Unity Engine** games on **Android devices** and standalone VR platforms like the **Meta Quest**. Acting as a mobile counterpart to the acclaimed **MelonLoader** for PC, LemonLoader empowers users and developers to inject and execute custom C# code mods, going far beyond simple asset replacements to alter core gameplay mechanics, add new features, and fix bugs.
 
-- ✅ [LemonLoader.com](https://lemonloader.com)
-- 👥 [GitHub Releases](https://github.com/YOUR-USERNAME/lemonloader/releases)
-- 🧹 CurseForge (if supported)
-
-### Files:
-- `LemonLoader-Installer.exe` for Windows
-- `LemonLoader-Installer.jar` for macOS & Linux
+This tool bridges the gap between PC and mobile modding ecosystems, bringing the power of universal Unity modding to your fingertips — transforming how you experience your favorite Android and VR games.
 
 ---
 
-## 🧪 How to Install LemonLoader
+## Key Features
 
-### 🫠 Windows
+- **Robust Code Modding**  
+  Inject and execute complex C# code mods that change game logic, mechanics, and UI.
 
-1. Download `LemonLoader-Installer.exe`
-2. Double-click to run
-3. Select your Minecraft folder  
-   _Usually_: `C:\Users\<You>\AppData\Roaming\.minecraft`
-4. Click **Install**
-5. A new Minecraft profile named **LemonLoader** will appear in your launcher
+- **Mono & IL2CPP Support**  
+  Seamlessly supports Unity’s two primary scripting backends, including reverse-engineering of IL2CPP binaries for deep mod integration.
 
-💡 *If SmartScreen blocks it: click “More Info” → “Run anyway”*
+- **Binary Patching & Injection**  
+  Patches game APKs on Android to load the mod loader environment before the game launches.
 
----
+- **External Mod & Plugin Loading**  
+  Supports loading third-party `.dll` mods and plugins stored in designated folders.
 
-### 🍎 macOS / 🐧 Linux
+- **Developer-Friendly Debugging Tools**  
+  Built-in logging, launch arguments, and runtime debugging aid mod developers.
 
-1. Download `LemonLoader-Installer.jar`
-2. Run from terminal:
-   ```bash
-   java -jar LemonLoader-Installer.jar
-   ```
-3. Follow terminal instructions to select Minecraft directory
-4. Launch Minecraft and use the **LemonLoader** profile
+- **Universal Unity Android & VR Compatibility**  
+  Works on Android phones, tablets, and standalone VR headsets like Meta Quest running Unity games.
 
----
+- **User-Friendly Installer**  
+  Simplifies the patching and mod installation process with an intuitive interface.
 
-## 🧱 How to Add Mods
-
-LemonLoader will auto-create or detect a `mods/` folder.
-
-### Steps:
-
-1. Download `.jar` mod files that support LemonLoader
-2. Place them in:
-
-- **Windows**: `%appdata%\.minecraft\mods`
-- **macOS/Linux**: `~/.minecraft/mods`
-
-3. Start Minecraft with the **LemonLoader** profile
-4. Mods will load automatically.
+- **Open Source & Community Driven**  
+  Transparent development encourages contributions, rapid improvement, and trust.
 
 ---
 
-## 🔌 Mod Compatibility
+## How LemonLoader Works
 
-LemonLoader is **not a Forge or Fabric clone**. Mods must be:
+LemonLoader functions by **patching the target Unity game's APK**, injecting a bootstrapping routine that initializes its runtime environment before the original game code executes. This enables:
 
-- Written for LemonLoader (or compatible with it)
-- Standalone `.jar` files
-- Designed without external APIs
+- Loading and executing **custom .NET assemblies (mods/plugins)**.
+- Interacting with internal game functions and data structures using C#.
+- Supporting both **Mono** (easier modding) and **IL2CPP** (complex native binaries) through advanced reverse-engineering tools like Il2CppAssemblyUnhollower and Cpp2IL.
 
-Mods made for Forge/Fabric **won’t work**, unless dual-compatible.
-
----
-
-## 🛠️ Troubleshooting
-
-| Issue                        | Fix                                                                 |
-|-----------------------------|----------------------------------------------------------------------|
-| Minecraft crashes            | Check if mods are compatible with Minecraft version                 |
-| Loader not appearing         | Reinstall and confirm correct `.minecraft` folder                   |
-| Java errors or no GUI        | Ensure Java 17+ is installed and in your system path                |
+This modular, injection-based design ensures high compatibility and modding flexibility across a broad range of Unity Android titles.
 
 ---
 
-## ❓ FAQ
+## Supported Platforms
 
-**Q: Can I use LemonLoader with Forge/Fabric?**  
-A: No, LemonLoader is standalone. Mods for other loaders won’t work unless designed for both.
+| Platform                | Supported          |
+|-------------------------|--------------------|
+| Android Smartphones     | ✅ Yes             |
+| Android Tablets         | ✅ Yes             |
+| Meta Quest / Oculus VR  | ✅ Yes             |
+| Other Standalone VR     | Potentially*       |
 
-**Q: Will LemonLoader affect my save files?**  
-A: No. It doesn’t touch your worlds—but always make backups before modding.
-
-**Q: How do I uninstall LemonLoader?**  
-A: Just remove the profile from your launcher and delete its files from `.minecraft`.
-
----
-
-## 🔐 Security & Open Source
-
-LemonLoader is fully open source and community maintained.  
-Source code: [https://github.com/YOUR-USERNAME/lemonloader](https://github.com/YOUR-USERNAME/lemonloader)
-
-Never download from third-party, unverified sites.
+*Depends on Unity version and game compatibility.
 
 ---
 
-## 📊 SEO Keywords
+## Installation Instructions
 
-`lemonloader`, `minecraft mod installer`, `minecraft mod loader`, `fabric alternative`, `minecraft mods 2025`, `cross-platform modding`, `lightweight mod loader`, `open source minecraft loader`, `jar mod installer`, `minecraft java 17 mods`
+### Prerequisites
+
+- Android device or VR headset with the Unity game installed.
+- Enabled installation from **Unknown Sources** or developer mode (for VR).
+- Backup original game files to avoid data loss.
+
+### Step-by-Step Installation
+
+1. **Download LemonLoader Installer APK**  
+   Access the latest installer from the official.
+
+2. **Allow Unknown Sources**  
+   Enable installation from unknown sources in your device's security settings.
+
+3. **Run the Installer**  
+   Launch the LemonLoader installer app on your device.
+
+4. **Select Target Unity Game**  
+   Choose the APK/game you want to mod.
+
+5. **Patch the Game**  
+   Apply LemonLoader’s patch to inject modding capabilities.
+
+6. **Add Mods**  
+   Place downloaded `.dll` mods in the game’s `Mods` folder created by LemonLoader.
+
+7. **Launch and Enjoy**  
+   Open the patched game to experience new mods and features.
+
+> ⚠️ *Always backup your game data before patching.*
 
 ---
 
-## 📜 License
+## Mod Compatibility
 
-LemonLoader is released under the [MIT License](LICENSE).
+- Works with a wide range of Unity games on Android.
+- Supports mods originally developed for MelonLoader (PC) with adaptations.
+- Mod performance may vary due to game-specific factors such as Unity version, obfuscation, or anti-cheat systems.
+- Not all mods are compatible out-of-the-box; some require adjustments.
 
 ---
 
-> Built for speed. Built for simplicity. Built for Minecraft. 🍋
+## Known Limitations
+
+- LemonLoader is under active development — expect occasional bugs.
+- Certain games with heavy obfuscation or unique binaries may be incompatible.
+- Android's Scoped Storage may restrict file access, complicating mod management.
+- Modding multiplayer games may risk bans or account penalties.
+- Performance overhead from code injection could affect lower-end devices.
+
+---
+
+## Why Use LemonLoader?
+
+- Unlock **next-level customization** for your favorite Android Unity games.
+- Extend gameplay longevity with fresh mechanics and community content.
+- Enjoy **PC-like modding experiences** on mobile and VR platforms.
+- Benefit from a **trusted, open-source** tool with growing community support.
+- Access developer tools that simplify creating and debugging mods.
+
+---
+
+## Community & Contributions
+
+LemonLoader thrives thanks to its passionate user and developer community. Whether you’re a player, modder, or coder:
+
+- Report bugs and suggest features on GitHub.
+- Share and collaborate on mods in community forums.
+- Contribute code improvements through pull requests.
+- Join Discord or Reddit discussions to connect with others.
+
+---
+
+## Frequently Asked Questions (FAQ)
+
+**Q: Is LemonLoader safe to use?**  
+A: Yes, LemonLoader itself is safe and open source. Always download mods from trusted sources.
+
+**Q: Do I need to root my Android device?**  
+A: No root access is required, but you must enable sideloading and unknown sources.
+
+**Q: Can LemonLoader mod non-Unity games?**  
+A: No, it only supports games built with the Unity Engine.
+
+**Q: Will modding with LemonLoader cause online bans?**  
+A: Using mods in online multiplayer games can result in bans. Use mods responsibly.
+
+**Q: Are all PC MelonLoader mods compatible on Android?**  
+A: Not all mods will work directly, but many can be adapted due to shared architecture.
